@@ -1,0 +1,416 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Popping', sans-serif;
+}
+
+.navbar {
+    background-image: url('img/logo-nike.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: sticky;
+    top: 0;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.navbar-center {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.card-btn {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-items {
+    color: rgb(252, 121, 121);
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-weight: bold;
+}
+
+.nav-icon {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/*********** slider *********************/
+.slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 800px;
+    display: flex; 
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 50%;
+}
+
+/*** navegacion manual ***/
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    margin-top: -70px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid red;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background: red;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+/*** navegacion auto ***/
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 730px; 
+}
+
+.navigation-auto div {
+    border: 2px solid red;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background: red;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background: red;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background: red;
+}
+
+.texto-encima{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.centrado{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    color: red;
+    font-size: 3rem;
+    text-transform: uppercase;
+
+    background: rgba(255, 255, 255, 0.8);
+    padding: 4rem;
+} 
+
+@media screen and (max-width: 990px) {
+    .centrado {
+        font-size: 2rem;
+        padding: 3rem;
+        top: 70%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .centrado {
+        font-size: 2rem;
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 615px) {
+    .centrado {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+}
+
+/*********** fin slider *****************/
+
+/*********** products dom ***************/
+
+.products {
+    padding: 4rem 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 12rem;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 0px rgba(7, 7, 7, 0.9);
+    background: white;
+}
+
+.img-product {
+    display: block;
+    width: 95%;
+    margin: auto;
+}
+
+figcaption {
+    background: white;
+    color: black;
+}
+
+.products h3, h4 {
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.products h4 {
+    font-size: 1rem;
+}
+
+.add-cart {
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    background: red;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+
+    position: absolute;
+    transform: translateX(100%);
+    transition: all 0.3s linear;
+    bottom: 58px;
+}
+
+.image-container:hover .add-cart {
+    transform: translateX(0);
+}
+
+.fa-shopping-cart {
+    margin-right: 0.5rem;
+}
+
+/*********** cart container *************/
+
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    z-index: 2;
+    padding: 1.5rem;
+    background: rgb(187, 183, 183, 0.5);
+
+    transition: all 0.3s linear;
+    visibility: hidden;
+}
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    z-index: 3;
+    padding: 1.5rem;
+    background: white;
+
+    transition: all 0.3s linear;
+    transform: translateX(100%);
+}
+
+.cart::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+/*** js ***/
+
+.showCart {
+    transform: translateX(0);
+}
+
+.transparentBcg {
+    visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
+    .cart {
+        width: 30vw;
+        min-width: 450px;
+    }
+}
+
+/*** fin js ***/
+
+.cart h2 {
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.close-cart {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.cart-item img {
+    width: 75px;
+    height: 75px;
+}
+
+.img-cardItems {
+    border-radius: 2px;
+    box-shadow: 0 0 10px 0px rgba(7, 7, 7, 0.9);
+}
+
+.cart-item h3 {
+    text-transform: capitalize;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.cart-item h5 {
+    margin: 0.9rem 0;
+}
+
+.delete-item {
+    cursor: pointer;
+    color: black;
+}
+
+.item-amount {
+    text-align: center;
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+    cursor: pointer;
+    color: black;
+}
+
+.cart-footer {
+    text-align: center;
+    margin-top: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.cart-footer h3 {
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.delete-cart {
+    padding: 1rem 3rem;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1rem;
+    border-radius: 2px;
+    font-size: 1rem;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.delete-cart:hover {
+    background: rgba(143, 141, 141, 0.8);
+    color: black;
+}
+
+.enCarrito {
+    background: tomato;
+    color: white;
+}
+
+.agregarCarrito {
+    background: red;
+    color: white;
+}

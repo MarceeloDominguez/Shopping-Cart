@@ -1,0 +1,52 @@
+{
+    "items": [
+        {
+            "id": "1",
+            "title": "Lorem ipsum dolor sit",
+            "price": 80,
+            "image": {"url": "./img/1.jpg"}
+        },
+        {
+            "id": "2",
+            "title": "Lorem ipsum dolor sit",
+            "price": 50,
+            "image": {"url": "./img/2.jpg"}
+        },
+        {
+            "id": "3",
+            "title": "Lorem ipsum dolor sit",
+            "price": 60,
+            "image": {"url": "./img/3.jpg"}
+        },
+        {
+            "id": "4",
+            "title": "Lorem ipsum dolor sit",
+            "price": 20,
+            "image": {"url": "./img/4.jpg"}
+        },
+        {
+            "id": "5",
+            "title": "Lorem ipsum dolor sit",
+            "price": 30,
+            "image": {"url": "./img/5.jpg"}
+        },
+        {
+            "id": "6",
+            "title": "Lorem ipsum dolor sit",
+            "price": 90,
+            "image": {"url": "./img/6.jpg"}
+        },
+        {
+            "id": "7",
+            "title": "Lorem ipsum dolor sit",
+            "price": 100,
+            "image": {"url": "./img/7.jpg"}
+        },
+        {
+            "id": "8",
+            "title": "Lorem ipsum dolor sit",
+            "price": 10,
+            "image": {"url": "./img/8.jpg"}
+        }
+    ]
+}

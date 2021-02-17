@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- navbar-->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <div class="card-btn">
+                <span class="nav-icon">
+                    <i class="fas fa-cart-plus"></i>
+                </span>
+                <div class="cart-items">0</div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+
+            <div class="slide first">
+                <img src="img/banner.jpg" alt="">
+                <div class="texto-encima"></div>
+                <div class="centrado">Tienda Online</div>
+            </div>
+            <div class="slide">
+                <img src="img/gorro-nike.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="img/isla-nike.jpg" alt="">
+            </div>
+            <!-- navegacion automatica-->
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+            <!-- fin navegacion automatica-->
+        </div>
+        <!-- navegacion manual-->
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+        <!-- fin navegacion manual-->
+    </div>
+
+    <!-- products dom -->
+    <section class="products">
+        <div class="container">
+        </div>
+    </section>
+    
+    <!-- cart container -->
+    <div class="cart-container"> <!-- transparentBcg -->
+        <div class="cart"> <!-- showCart -->
+            <span class="close-cart">
+                <i class="fa fa-window-close"></i>
+            </span>
+            <h2>Tu carrito</h2>
+            <div class="content-inCart">
+                <div class="cart-item">
+                </div>
+            </div>
+            <div class="cart-footer">
+                <h3>total: $<span class="total-price">0</span></h3>
+                <button class="delete-cart">limpiar carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/d83c9c9ae8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
